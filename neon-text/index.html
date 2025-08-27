@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script type="module" src="neonButtonsControl.js" defer></script>
+    <title> Neon Text Effects </title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="neon-controls">
+                <button 
+                    class="neon-controls__button neon-controls__button--active"
+                    data-animation="flicker">
+                    Flickering 
+                </button>
+                <button 
+                    class="neon-controls__button"
+                    data-animation="pulse">
+                    Pulsating 
+                </button>
+                <button 
+                    class="neon-controls__button"
+                    data-animation="border">
+                    Border 
+                </button>
+            </div>
+            <div class="neon-text-container neon-text-container--bordered">
+                <h1 class="neon-text"> WEEE! </h1>
+                <p class="neon-text"> I'm glowing! </p> 
+            </div>
+        </section>
+    </main>
+</body>
+</html>
