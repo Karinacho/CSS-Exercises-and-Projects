@@ -1,0 +1,99 @@
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.neon-text-container {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.neon-text-container--bordered {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 
+        0 0 6px #fff,
+        0 0 15px #fff, 
+        0 0 25px #0fa,
+        inset 0 0 10px #0fa;
+    padding: 20px;
+}
+
+.neon-text {
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+
+    &.flicker {
+        animation: flicker 1.5s infinite alternate; 
+    }
+    &.pulse {
+        animation: pulse 1.5s infinite alternate; 
+    }
+}
+
+.neon-controls__button {
+    padding: 6px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        text-shadow: 
+           0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #0fa,
+            0 0 82px #0fa,
+            0 0 92px #0fa,
+            0 0 102px #0fa,
+            0 0 151px #0fa;
+    }
+
+    100% {
+        text-shadow:
+            0 0 0 #fff,
+            0 0 2px #fff,
+            0 0 5px #fff,
+            0 0 15px #0fa,
+            0 0 20px #0fa,
+            0 0 45px #0fa,
+            0 0 55px #0fa,
+            0 0 70px #0fa;
+    }
+}
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #0fa,
+            0 0 82px #0fa,
+            0 0 92px #0fa,
+            0 0 102px #0fa,
+            0 0 151px #0fa;
+    }
+
+    20%, 24%, 55% {        
+      text-shadow: none;
+    }  
+}
+
+@media screen and (prefers-reduced-motion) { 
+    .neon-text {
+        &.flicker {
+            animation: none; 
+        }
+
+        &.pulse {
+            animation: none; 
+        }
+    }
+}
